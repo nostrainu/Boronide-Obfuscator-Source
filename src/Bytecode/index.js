@@ -159,7 +159,7 @@ function SetupReferences(chunk, inst) {
         case 'TEST':
         case 'TESTSET':
         case 'TFORLOOP':
-            Reference = chunk.Instr[ chunk.Instr.indexOf(inst) + chunk.Instr[chunk.Instr.indexOf(this) + 1]['2'] + 1 + 1 ]
+            Reference = chunk.Instr[ chunk.Instr.indexOf(inst) + chunk.Instr[chunk.Instr.indexOf(inst) + 1]['2'] + 1 + 1 ]
             inst.References[2] = Reference
             Reference.BackReferences.push(inst)
             break

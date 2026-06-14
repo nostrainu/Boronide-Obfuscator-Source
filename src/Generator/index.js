@@ -1172,10 +1172,12 @@ end;`
             end;
         });
         
-        local Vararg, Varargsz = {}, gfenv()["select"]('#', ...) - 1;
+        local Varargsz = gfenv()["select"]('#', ...) - Chunk['|Args|'];
+        Varargsz = Varargsz > 0 and Varargsz or 0;
+        local Vararg = {};
         local Args = {...};
         
-        for Idx = 0, Varargsz do
+        for Idx = 0, gfenv()["select"]('#', ...) - 1 do
             if (Idx >= Chunk['|Args|']) then
                 Vararg[Idx - Chunk['|Args|']] = Args[Idx + 1];
             else
